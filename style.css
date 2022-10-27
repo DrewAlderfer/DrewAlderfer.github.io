@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&family=Source+Serif+Pro:wght@400;700&display=swap');
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    width: 35em;
+    max-width: 700px;
+}
+
+h1, h2, h3, b, a {
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+#header {
+    color: orangered;
+    text-align: center;
+    padding: .5em;
+    border: orangered 5px double;
+}
+
+#header > a {
+    text-transform: uppercase;
+    font-size: .5em;
+}
+
+#toc {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items:flex-start;
+}
+
+.a-post {
+    font-size: .8em;
+    padding: .5em;
+    color: black;
+    /* border-radius: 1em;  
+    color: white;  
+    text-decoration: none;
+    background-color: grey; */
+}
+
+#h-post {
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+h2 {
+    padding-top: 1em;
+    border-top: 1px solid grey;
+    color: grey;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: orangered;
+    margin-top: 0em;
+}
+
+p {
+    font-family: 'Source Serif Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    line-height: 150%;
+
+}
