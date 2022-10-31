@@ -26,12 +26,30 @@
 
     <div class="post" id="02">
         <h2>Phase 2 Blog</h2>
-        <h3>Lorem Ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus suscipit lacus, ac hendrerit massa facilisis in. Curabitur in nunc id odio dignissim maximus. Maecenas vel est dignissim, vestibulum tortor at, fringilla eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut congue mattis risus, sit amet porta risus accumsan non. Etiam felis nisi, facilisis vel condimentum non, congue ac massa. Donec nec eleifend orci. Suspendisse elementum justo quis tempus placerat. Praesent lobortis dapibus justo eget pretium. Vestibulum at nisl dolor. Cras tortor velit, tempus ut bibendum in, porttitor at quam.</p>
-        <p>Nulla condimentum sapien ac odio suscipit, eget rhoncus leo semper. Sed mollis sem eget augue aliquam, eget condimentum eros molestie. Aliquam a mauris at arcu faucibus molestie. Phasellus sed egestas erat. Fusce quis nibh vel purus venenatis aliquet. Aenean mollis sem in lorem fringilla faucibus. Vestibulum in ultricies leo. Sed congue ultrices nisi, a mattis dui imperdiet et. Fusce libero est, eleifend id justo vitae, tincidunt tincidunt arcu. Cras aliquet mi ut libero rhoncus suscipit. Nunc porta convallis sollicitudin. Quisque sed nisl quis lacus auctor vestibulum. Praesent nunc lorem, ornare non enim non, ultricies malesuada mauris. Nunc imperdiet commodo interdum.</p>
-        <p>Nulla condimentum sapien ac odio suscipit, eget rhoncus leo semper. Sed mollis sem eget augue aliquam, eget condimentum eros molestie. Aliquam a mauris at arcu faucibus molestie. Phasellus sed egestas erat. Fusce quis nibh vel purus venenatis aliquet. Aenean mollis sem in lorem fringilla faucibus. Vestibulum in ultricies leo. Sed congue ultrices nisi, a mattis dui imperdiet et. Fusce libero est, eleifend id justo vitae, tincidunt tincidunt arcu. Cras aliquet mi ut libero rhoncus suscipit. Nunc porta convallis sollicitudin. Quisque sed nisl quis lacus auctor vestibulum. Praesent nunc lorem, ornare non enim non, ultricies malesuada mauris. Nunc imperdiet commodo interdum.</p>
-        <p>Nulla condimentum sapien ac odio suscipit, eget rhoncus leo semper. Sed mollis sem eget augue aliquam, eget condimentum eros molestie. Aliquam a mauris at arcu faucibus molestie. Phasellus sed egestas erat. Fusce quis nibh vel purus venenatis aliquet. Aenean mollis sem in lorem fringilla faucibus. Vestibulum in ultricies leo. Sed congue ultrices nisi, a mattis dui imperdiet et. Fusce libero est, eleifend id justo vitae, tincidunt tincidunt arcu. Cras aliquet mi ut libero rhoncus suscipit. Nunc porta convallis sollicitudin. Quisque sed nisl quis lacus auctor vestibulum. Praesent nunc lorem, ornare non enim non, ultricies malesuada mauris. Nunc imperdiet commodo interdum.</p>
-        <p>Nulla condimentum sapien ac odio suscipit, eget rhoncus leo semper. Sed mollis sem eget augue aliquam, eget condimentum eros molestie. Aliquam a mauris at arcu faucibus molestie. Phasellus sed egestas erat. Fusce quis nibh vel purus venenatis aliquet. Aenean mollis sem in lorem fringilla faucibus. Vestibulum in ultricies leo. Sed congue ultrices nisi, a mattis dui imperdiet et. Fusce libero est, eleifend id justo vitae, tincidunt tincidunt arcu. Cras aliquet mi ut libero rhoncus suscipit. Nunc porta convallis sollicitudin. Quisque sed nisl quis lacus auctor vestibulum. Praesent nunc lorem, ornare non enim non, ultricies malesuada mauris. Nunc imperdiet commodo interdum.</p>
+        <h3>Python and more Python</h3>
+        <p>I made a bunch of things in the past two weeks. In addition to all of the school work and statsitical modeling we did I also got very excited about writing python tools.</p>
+        <p>One of the things I made was a web scraper to pull down all of my school work off the canvas website. It uses the selenium webdriver to navigate the canvas sight and automatically 
+           fork repos, create local directories for them and then clone them from my github account. It doesn't do all of that with selenium. I needed to work with the github api
+           and actually rewrote a small part of the python github module to fit my needs. It was a lot of fun and there are still a lot of improvements that i want to make.
+           To accomplish this I needed to learn a lot about websdrivers, processing different types of string encodings and smart error handling.</p>
+        <p>Another thing I made was a Jupyter Notebook search tool of sorts. It goes through a directory of notebooks and pulls out information using Regular expressions.
+           I have been creating my own little local python documentation for the things we are learning in lecture and through our online work, and I wanted to automate
+           some of that work. So I wrote a file searching tool that looks for python code in the notebooks and then matches each part of it with it's specific function or
+           class. The point was to pull out all the library imports and match aliases with their actual class names and methods. I have that part working and the next step
+           will be to go out to the offical documentation sites and scrap the docs for each class. Then saving the information in a documentation file on my computer.</p>
+        <p>The idea for this came from using the Neovim/Vim documentation and wanting to create something similarly easy to use. In trying to figure out how it was made
+           I discovered that it is autogenerated from the C source code. There's a program called Doxygen that the developers of Neovim use to compile the documentation
+           directly into the program. This is, it seems, how almost all documentation is created. It makes sense, but I had just never thought about it before. It's very
+           interesting and I am excited to dig into it deeper when I have more time.</p>
+        <p>I've also been working on a SQL Python Class that makes querying an sqlite database a little less clunky, or at least a little more like working with
+           a python class. I wanted to use it in the Phase 2 project and see how and where it can be improved but I just ran out of time to try and work through
+           the setup required. I am interested in working more with SQL. I really didn't like it at first but once it clicked it was actually pretty nice to use.
+           I think that's it for the last two/three weeks. I spend the majority of the time we had to work on the phase two project trying to get big datasets and
+           trying to figure out a dynamic way to translate a random set of points into a grid with straight lines and reading a lot about different classes and 
+           methods in the documentation for the modules we are using in class. I've been really excited about programming and just generally getting lost in the
+           problem solving of it. I'm really liking python, but also interested in Rust for embedded programming. I have had the idea for a while to make a screw
+           sorting machine that uses machine vision to sort screws of different head types and lengths. If i can find a photo library or scrap enough training images
+           I think that is what I will do for the phase 3 project.</p>
 </div>
 
     </div></div>
