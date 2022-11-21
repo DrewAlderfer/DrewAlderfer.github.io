@@ -34,3 +34,36 @@ data-science. While I expect the program at Flatiron to be quite fast-paced I am
 looking forward to getting the practical experience using the tools and techniques
 of data-science, and deepening my understanding an interaction with those tools as
 I move forward to pursue a new career in a related field after graduation.
+
+## Phase 3 Blog
+
+The during the last phase I spend a fair amount of time learning about the ast module
+in the Python standard library. AST stands for 'Abstract Syntax Tree' and refers to an
+abstract representation of a programming language. The ast in python is used as a step
+in code parsing during the compiling process. The broad outline of the Python runtime
+compilation process is:
+1. code
+2. abstract syntax tree
+3. bit-code
+4. binary program (what actually runs on the CPU)
+
+The purpose of the abstract syntax tree is to represent the code as a nested or 'tree'
+structure where the branches are objects in objects. The ast module gives programmers
+access to this representation built in to python and is often used for code parsing
+in static code analysis. Static code analysis is the process for trying to understand
+what a program or block of code does without running it. It is used in linters (error
+checkers) and LSPs (Language Server Protocols).
+
+The ast module provides a very powerful tool for doing any type of code analysis and
+manipulation. Continuing with my goals in the last blog post I started using it to
+automate documentation and note taking tasks related to the canvas content. 
+
+Before I was using regular expressions to try to find patterns and locate important
+information but ASTs provide a much more direct and reliable way to identify objects
+and structures within code blocks. Using ast resulted in a much more robust and useful
+form of identification.
+
+Next steps:
+Use regex to format and abstract identified objects as their base form.
+Use LSP to get doc-strings and signature help for each returned object.
+Use a second pass with the ast module to locate examples of usage in the code base.

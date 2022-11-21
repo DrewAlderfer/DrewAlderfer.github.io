@@ -51,6 +51,44 @@
            sorting machine that uses machine vision to sort screws of different head types and lengths. If i can find a photo library or scrap enough training images
            I think that is what I will do for the phase 3 project.</p>
 </div>
+    <div class="post" id="03">
+        <h2>Phase 3 Blog</h2>
+        <h3>Abstract Syntax Trees</h3>
+        <p>The during the last phase I spend a fair amount of time learning about the ast module
+in the Python standard library. AST stands for 'Abstract Syntax Tree' and refers to an
+abstract representation of a programming language. The ast in python is used as a step
+in code parsing during the compiling process. The broad outline of the Python runtime
+compilation process is:</p>
+        <ol>
+            <li>code</li>
+            <li>abstract syntax tree</li>
+            <li>bit-code</li>
+            <li>binary program (what actually runs on the CPU)</li>
+        </ol>
+        <p>The purpose of the abstract syntax tree is to represent the code as a nested or 'tree'
+structure where the branches are objects in objects. The ast module gives programmers
+access to this representation built in to python and is often used for code parsing
+in static code analysis. Static code analysis is the process for trying to understand
+what a program or block of code does without running it. It is used in linters (error
+checkers) and LSPs (Language Server Protocols).</p>
+
+        <p>The ast module provides a very powerful tool for doing any type of code analysis and
+manipulation. Continuing with my goals in the last blog post I started using it to
+automate documentation and note taking tasks related to the canvas content. </p>
+
+        <p>Before I was using regular expressions to try to find patterns and locate important
+information but ASTs provide a much more direct and reliable way to identify objects
+and structures within code blocks. Using ast resulted in a much more robust and useful
+form of identification.</p>
+
+        <p>Next steps:
+        <ul>
+            <li>Use regex to format and abstract identified objects as their base form.</li>
+            <li>Use LSP to get doc-strings and signature help for each returned object.</li>
+            <li>Use a second pass with the ast module to locate examples of usage in the code base.</li>
+        </ul>
+        </p>
+</div>
 
     </div></div>
 </body>
