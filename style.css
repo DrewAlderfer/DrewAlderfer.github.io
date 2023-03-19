@@ -1,22 +1,31 @@
-/* 
-NOTES FOR DREW:
-CSS Flexbox Tips: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
- */
+:root {
+    --light: #aaa;
+    --dark: #888;
+    --hover: #e8f1ff;
+    --link: #2e94b0;
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: 100;
+    overflow: hidden;
+}
 
 #p-expanded {
-    /* background-color: aquamarine; */
     height: 90vh;
     max-height: 90vh;
     width: 0vw;
     overflow: auto;
-    /* flex: 0 1; */
+    max-width: 750px !important;
     transition: width 1s ease-in-out;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid var(--link);
  }
-body {
-    font-family: "Trebuchet MS", sans-serif;
-    font-weight: 100;
-}
+
+ .project_body > h3 {
+    font-size: 2em;
+    color: var(--link);
+    margin: .5em 0 0 0;
+ }
 
 .main {
     display: flex;
@@ -27,6 +36,8 @@ body {
 .header {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
+    padding-right: 5em;
     gap: 0 10%;
     padding-left: 1em;
 }
@@ -35,36 +46,52 @@ body {
     text-transform: uppercase;
 }
 
+#me > h2 {
+    margin: 0em;
+}
+
+#me > p {
+    margin-top: .25em;
+    color: var(--dark);
+}
 .wrapper {
     display: flex;
     gap: 1em;
     flex: 1;
     flex-wrap: wrap;
+    padding-left: 1em;
 }
 
 .project {
-    /* background-color: lightblue; */
-    border: 1px solid #aaa;
+    background-color: white;
+    border: 1px solid var(--light);
     padding: 1em;
-    width: 200px;
+    min-width: 250px;
+    width: 21%;
     max-height: 350px;
-    /* flex: 1; */
 }
 
+.project:hover {
+    background-color: var(--hover);
+    border: 1px solid var(--link);  
+}
 .p-info {
     display: flex;
     align-items: baseline;
-    gap: 1em;
+    flex-direction: column;
+    gap: .25em;
 }
 
+.p-title {
+    margin-bottom: 0em;
+}
 .tag {
     font-size: .75em;
-    color: #888;
+    color: var(--dark);
 }
 
 .gallery {
     height: 200px;
-    /* background-color: coral; */
 }
 
 .gallery > img {
