@@ -1,0 +1,1 @@
+Machine learning project that developed a customized autoencoder/decoder architecture to identify manufacturing defects in images of screws.
