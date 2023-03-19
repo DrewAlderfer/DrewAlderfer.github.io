@@ -37,9 +37,9 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    padding-right: 5em;
+    padding: 0 1em 0 1em;
     gap: 0 10%;
-    padding-left: 1em;
+    border-bottom: 1px solid var(--link)
 }
 
 .header > p {
@@ -56,24 +56,28 @@ body {
 }
 .wrapper {
     display: flex;
-    gap: 1em;
+    /* gap: 1em; */
     flex: 1;
-    flex-wrap: wrap;
-    padding-left: 1em;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* padding-left: 1em; */
 }
 
 .project {
     background-color: white;
-    border: 1px solid var(--light);
+    /* border: 1px solid var(--light); */
     padding: 1em;
-    min-width: 250px;
-    width: 21%;
+    /* min-width: 250px; */
+    /* width: 21%; */
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
     max-height: 350px;
 }
 
 .project:hover {
     background-color: var(--hover);
-    border: 1px solid var(--link);  
+    /* border: 1px solid var(--link);   */
 }
 .p-info {
     display: flex;
@@ -83,7 +87,8 @@ body {
 }
 
 .p-title {
-    margin-bottom: 0em;
+    font-size: 1.5em;
+    margin: 0em;
 }
 .tag {
     font-size: .75em;
@@ -91,7 +96,8 @@ body {
 }
 
 .gallery {
-    height: 200px;
+    height: 150px;
+    width: 200px;
 }
 
 .gallery > img {
