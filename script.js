@@ -4,8 +4,15 @@
 let projects = document.querySelectorAll(".project");
 let panel = document.getElementById("p-expanded")
 let pOpen = false;
-
+let descriptions = document.querySelectorAll(".description")
 // console.log(panel)
+
+descriptions.forEach( desc => {
+    number = desc.id
+    if (number) {
+        fetch (`projects/${number}/desc.txt`).then(x => x.text()).then(y => desc.innerHTML = y)
+    }
+})
 
 projects.forEach(p => {
     p.addEventListener("click", sidePanel);

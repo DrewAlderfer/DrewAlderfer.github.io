@@ -1,0 +1,1 @@
+Analyzed time-series data from a hydraulic pump fitted with sensor. The data was collected by the sensors during 60 second cycles and used to predict the maintenance condition of the pump.
