@@ -1,0 +1,1 @@
+Machine Vision project for detecting screws. Successfully implements darkent YOLO trained on a small dataset.

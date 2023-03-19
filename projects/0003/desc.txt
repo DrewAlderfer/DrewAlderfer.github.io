@@ -1,0 +1,1 @@
+A data analysis project that attempted to find development opportunities by cross referencing census data and real estate data for Kings County, WA.
