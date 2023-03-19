@@ -4,140 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Drew's Datascience Blog</title>
+    <title>Andrew Alderfer's Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- WHENEVER YOU'RE READY DO METADATA -->
+
 </head>
 <body>
-    <div class="wrapper">
-        <div class="post" id="01">
-            <h2>Phase 4 Blog</h2>
-            <h3>Anomaly Deteciton</h3>
-            <p>My project for phase 4 was focused on autoencoders. The basic concept of an autoencoder
-            is to take "learn" an encoder/decoder loop for a set of inputs. The input could be any
-            kind of structured data, but because my project was to attempt anomaly detection (AD) from 
-            a set of images my input was image data.</p>
-            <p>One of the exciting things to me about this project was the way that a machine-learning
-            architecture was applied to a practical problem by using its natural tendency to overfit.
-            Let me explain.</p>
-            <p>The role a neural-network arranged as an autoencoder plays in an AD scenario is to
-            test data against its training set and perform poorly if the data is anomalous. It does
-            this by learning to encode and then decoded "normal" data only. In my case that meant
-            training my model on pictures of un damaged screws. The training loop involves encoding
-            the normal images, decoding them and then measuring the difference between the original
-            input and the decoded (or reconstructed) output.</p>
-            <p>By only training the model on normal input you end up with an algorithm that learns
-            to encode the features of your data very well and can reconstruct them from an encoding
-            with a very low amount of loss. Once trained, you can then use that model to predict
-            a test set containing both normal and anomalous data. In my case anomalous data was images
-            of damaged screws, but more broadly it is any data with features absent from your training
-            data.</p>
-            <p>This is where the overfitting comes in. By tuning our model to perform poorly on data
-            containing features it did not see in training, but well on data very similar to the
-            training data we should observe a clear distinction in their relative the loss distributions.
-            That difference in loss distribution between normal and abnormal inputs to the model 
-            provides the basis for a simple binary classification. Above a certian loss threshold we
-            assert that the data is anomalous, or contains anomalies. Below, the threshold we assert
-            that the data is normal.</p>
-            <p>The model is ultimately rated on it's accuracy score in "predicting" this binary
-            classification.</p>
-            <p>What was exciting about this to me was that second step of classifing data based on
-            the output of the model rather than asking the model to classify directly. Up until this
-            point machine learning models had always appeared or been presented to me as engineering
-            ends unto themselves. They are often presented, at least in my exprience, as the end point
-            of a process where their usefulness is measured by their ability to replace engineering.
-            Their inner functionality is more often than not presented as miraculous and secondary
-            to the novelty of getting a machine to appear to think for you.</p>
-            <p>In the process I describe above, though, the model is just one node in an engineering
-            workflow and its inner functionality is explicitly useful because of its coherent structure.
-            It's a tool in the process and not a coworker.</p>
-            <p>Coming from a background in fabrication this was a very exciting thing to be exposed
-            to, because in capentry, and metalwork mastery come through your ability to understand
-            your tools and how they can be applied to a given task. Learning how to navigate that 
-            constraint space is the fountain of creativity that comes from experience and understanding your 
-            tools inside and out. It was really cool to see examples of and learn from people applying
-            this same kind of creativity to practical engineering tasks.</p>
-    <div class="post" id="02">
-        <h2>Phase 3 Blog</h2>
-        <h3>Abstract Syntax Trees</h3>
-        <p>The during the last phase I spend a fair amount of time learning about the ast module
-in the Python standard library. AST stands for 'Abstract Syntax Tree' and refers to an
-abstract representation of a programming language. The ast in python is used as a step
-in code parsing during the compiling process. The broad outline of the Python runtime
-compilation process is:</p>
-        <ol>
-            <li>code</li>
-            <li>abstract syntax tree</li>
-            <li>bit-code</li>
-            <li>binary program (what actually runs on the CPU)</li>
-        </ol>
-        <p>The purpose of the abstract syntax tree is to represent the code as a nested or 'tree'
-structure where the branches are objects in objects. The ast module gives programmers
-access to this representation built in to python and is often used for code parsing
-in static code analysis. Static code analysis is the process for trying to understand
-what a program or block of code does without running it. It is used in linters (error
-checkers) and LSPs (Language Server Protocols).</p>
+    <!-- Info about Drew -->
+    <div class="header debug">
+        <h2>Andrew Alderfer</h2>
+        <p>andrew |at| drewalderfer |dot| com</p>
+        <p>about me</p>
+    </div>
 
-        <p>The ast module provides a very powerful tool for doing any type of code analysis and
-manipulation. Continuing with my goals in the last blog post I started using it to
-automate documentation and note taking tasks related to the canvas content. </p>
+<div class="main">
+    <div id="p-expanded">
+    </div>
 
-        <p>Before I was using regular expressions to try to find patterns and locate important
-information but ASTs provide a much more direct and reliable way to identify objects
-and structures within code blocks. Using ast resulted in a much more robust and useful
-form of identification.</p>
-
-        <p>Next steps:
-        <ul>
-            <li>Use regex to format and abstract identified objects as their base form.</li>
-            <li>Use LSP to get doc-strings and signature help for each returned object.</li>
-            <li>Use a second pass with the ast module to locate examples of usage in the code base.</li>
-        </ul>
-        </p>
-</div>
-
-    <div class="post" id="03">
-        <h2>Phase 2 Blog</h2>
-        <h3>Python and more Python</h3>
-        <p>I made a bunch of things in the past two weeks. In addition to all of the school work and statsitical modeling we did I also got very excited about writing python tools.</p>
-        <p>One of the things I made was a web scraper to pull down all of my school work off the canvas website. It uses the selenium webdriver to navigate the canvas sight and automatically 
-           fork repos, create local directories for them and then clone them from my github account. It doesn't do all of that with selenium. I needed to work with the github api
-           and actually rewrote a small part of the python github module to fit my needs. It was a lot of fun and there are still a lot of improvements that i want to make.
-           To accomplish this I needed to learn a lot about websdrivers, processing different types of string encodings and smart error handling.</p>
-        <p>Another thing I made was a Jupyter Notebook search tool of sorts. It goes through a directory of notebooks and pulls out information using Regular expressions.
-           I have been creating my own little local python documentation for the things we are learning in lecture and through our online work, and I wanted to automate
-           some of that work. So I wrote a file searching tool that looks for python code in the notebooks and then matches each part of it with it's specific function or
-           class. The point was to pull out all the library imports and match aliases with their actual class names and methods. I have that part working and the next step
-           will be to go out to the offical documentation sites and scrap the docs for each class. Then saving the information in a documentation file on my computer.</p>
-        <p>The idea for this came from using the Neovim/Vim documentation and wanting to create something similarly easy to use. In trying to figure out how it was made
-           I discovered that it is autogenerated from the C source code. There's a program called Doxygen that the developers of Neovim use to compile the documentation
-           directly into the program. This is, it seems, how almost all documentation is created. It makes sense, but I had just never thought about it before. It's very
-           interesting and I am excited to dig into it deeper when I have more time.</p>
-        <p>I've also been working on a SQL Python Class that makes querying an sqlite database a little less clunky, or at least a little more like working with
-           a python class. I wanted to use it in the Phase 2 project and see how and where it can be improved but I just ran out of time to try and work through
-           the setup required. I am interested in working more with SQL. I really didn't like it at first but once it clicked it was actually pretty nice to use.
-           I think that's it for the last two/three weeks. I spend the majority of the time we had to work on the phase two project trying to get big datasets and
-           trying to figure out a dynamic way to translate a random set of points into a grid with straight lines and reading a lot about different classes and 
-           methods in the documentation for the modules we are using in class. I've been really excited about programming and just generally getting lost in the
-           problem solving of it. I'm really liking python, but also interested in Rust for embedded programming. I have had the idea for a while to make a screw
-           sorting machine that uses machine vision to sort screws of different head types and lengths. If i can find a photo library or scrap enough training images
-           I think that is what I will do for the phase 3 project.</p>
-</div>
-    <div class="content">
-        <h1 id="header">Drew's Datascience Blog<br>
-        <a href="https://www.linkedin.com/in/drew-alderfer-b53b9762/" target="_blank">linkedin</a></h1>
-        <div id="toc"><b id="h-post">posts:</b> <a href="#01" class="a-post">why datascience?</a><a href="#02" class="a-post">lorem</a>
+    <!-- Projects go here -->
+    <div class="wrapper debug">
+        <div class="project" title="0001">
+            <div class="gallery">
+                <img src="images/0001.jpg"></img>
+            </div>
+            <div class="p-info">
+                <h3 class="p-title">Object Detection</h3><small class="tag">Manufacturing</small>
+            </div>
+            <p>descriptive text hehe</p>
         </div>
-        <div class="post" id="04">
-            <h2>Phase 1 Blog</h2>
-            <h3>Why Datascience?</h3>
-            <p>In the last few years I have been increasingly drawn toward wanting to understand topics in Machine-learning and computer science on a deep level. Part of that journey has been developing an interest in the field of statistical analysis and more recently casual inference. For a much longer period I have been very interested in some areas of macro-economics and I have found that many of the technical details of these subjects share their roots in statistics and mathematics. </p>
-            <p>For the past 6 or 7 years I have been working in the furniture, and commercial fabrication industries as a metal worker and carpenter. When I decided to change careers I intially looked to engineering and computer science given my love of designing and making functional objects and my interest in computers. Pursuing an advanced degree in an engineering or CS field seems to me like an over investment of time and money at this stage of my life. My overarching desire is always to get hands-on experience with the practical applications of a subject and a bootcamp seemed like a great way to accomplish that goal.</p>
-            <p>Once I started looking into bootcamps I found that the data-science programs on offer seemed to fit into my interests much more closely than most software programs. The subject matter seemed both more technical and offered opportunities after  graduation that fit my personality and personal passions much more closely than a frontend focused software course. I am excited to explore the mathematic basis behind Machine-learning and to put those concepts to use right away while learning to utilize machine learning tools developed as part of a Python focused data-analysis workflow.</p>
-            <p>I also am excited to deepen my comfort with and understanding of programming and look forward to getting experience coding and developing tools to help in the process of data-science. While I expect the program at Flatiron to be quite fast-paced I am looking forward to getting the practical experience using the tools and techniques of data-science, and deepening my understanding an interaction with those tools as
-                I move forward to pursue a new career in a related field after graduation.</p>
+
+        <div class="project" title="0002">
+            <div class="gallery">
+                <img src="images/0002.png"></img>
+            </div>
+            <div class="p-info">
+                <h3 class="p-title">Hydraulic Pump Monitoring</h3><small class="tag">Operations, Manufacturing</small>
+            </div>
+            <p>descriptive text hehe</p>
+        </div>
+
+        <div class="project" title="0003">
+            <div class="gallery">
+                <img src="images/0003.png"></img>
+            </div>
+            <div class="p-info">
+                <h3 class="p-title">Real Estate Data Anaylsis</h3><small class="tag">Public Data, Finance</small>
+            </div>
+            <p>descriptive text hehe</p>
+        </div>
+
+        <div class="project" title="0004">
+            <div class="gallery">
+                <img src="images/0004.png"></img>
+            </div>
+            <div class="p-info">
+                <h3 class="p-title">Anomaly Detection</h3><small class="tag">Manufacturing</small>
+            </div>
+            <p>descriptive text hehe</p>
+        </div>
+
     </div>
 </div>
-
-    </div></div>
+    <script src="./script.js"></script>
 </body>
 </html>

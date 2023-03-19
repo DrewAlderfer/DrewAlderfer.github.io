@@ -1,0 +1,7 @@
+.project_img {
+    height: 400px;
+    background-color: coral;
+}
+.project_body > p {
+    text-indent=-1em; 
+}

@@ -1,0 +1,64 @@
+<div class="project_wrapper">
+    <div class="project_img">
+        <img src="images/0001.jpg"></img>
+    </div>
+    <div class="project_body">
+        <h3>Object Detection</h3>
+        <p>The goal of this project is to use a dataset of photographs to train a model to detect 
+        and identify an assorment of screws and nuts. The dataset was taken from the MVTec Screws 
+        Dataset. Object detection is a challenging problem in machinelearning and continues to be 
+        a very active area of research with new algorithms and processes being developed regularly.</p>
+        <p>The Dataset for this project consists of several hundred images of around 4500 thousand 
+        pieces of construction hardware belonging to 13 different classes. The mostly represent 
+        types of common screws however the images also contain nuts of varying sizes. Each size 
+        and type of hardware belongs to its own class.</p>
+
+        <h4>Exploratory Data Analysis</h4>
+        <p>The data is structured in a format similar to the COCO dataset standard. It is derived 
+        from a proprietary format belonging to the dataset originator, MVTec. The images are very 
+        standardized each depicting a different configuration of randomly assorted pieces of 
+        hardware. There is broadly no major class imbalance however individual images can contain 
+        anywhere from 10 to 20 parts of 5 to 10 classes.</p>
+
+        <h4>Data Cleaning/Preparation</h4>
+        <p>The data presented several challenges when preparing it for training. The bounding-box 
+        format was similar to the COCO format but did not seem to match what most plug and play 
+        tool chains expected. This meant reworking the data multiple times and in a multitude of 
+        ways.</p>
+
+        <p>Data manipulation led to the writing of several custom tools to handle various aspects 
+        of preparing the data. These included:
+
+        <ul>
+            <li>Tools to create coordinate points for bounding box corners from the row, col, 
+                width, height, angle format in the data.</li>
+            <li>Tools to create compatible label formats for training.</li>
+            <li>Tools to calculate IoU and GIoU for unaligned bounding boxes.</li>
+            <li>Tools to provide necessary calculations from the label data to the loss function 
+                of a YOLO-like model.</li>
+        </ul></p>
+
+        <h4>Final Model</h4>
+        <p>For my final object detection attempt I used a YOLO implmentation written with Darknet. 
+        Darknet is a NN framework written in C and provides a python api and many versions of 
+        models with trained weights. I am using the YOLOv3 implementation in darknet and trained 
+        it using a set of weights from COCO and my own data.</p>
+
+        <p>It was relatively easy to set up and get training. There were small adjustments I need 
+        to make to my dataset and simple scripts to translate my labels to a format darknet will 
+        accept. In order to use this framework I removed the angle parameter from the labels and 
+        recalculated the points to match what darknet expects.</p>
+
+        <img src="projects/0001/images/img_001.jpg"></img>
+
+        <h4>Conclusion</h4>
+        <p>Although this project has been difficutl to get into a strong place performance-wise I 
+        am extremely satisfied with the progress and expreince I have gotten while working towards 
+        its completion. There is still a little ways to go, but I am excited to bring the 
+        knowledge and skills I have learned thus far to tackling the final stretch. The 
+        idosyncracies in the dataset have comlicated most of my attempts at finding the solution 
+        with the straightest path to completion, but thanks to that process I feel that I have 
+        gained real experience and knowledge in an area of machine-learning that I am deeply 
+        interested in pursuing further.</p>
+    </div>
+</div>
