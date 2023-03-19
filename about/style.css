@@ -1,0 +1,14 @@
+.main {
+    width: 60vw;
+    padding: 2em;
+    justify-content: left;
+}
+
+#bio {
+    flex-flow: column nowrap;
+}
+
+.photo > img {
+    width: 20vw;
+    object-fit: cover;
+}
