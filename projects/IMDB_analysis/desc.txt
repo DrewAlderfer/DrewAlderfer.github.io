@@ -1,0 +1,1 @@
+A basic data analysis project that sought to provide insights and reccomendations for investors based on publicly available data from IMDB.

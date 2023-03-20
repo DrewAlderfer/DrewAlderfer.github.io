@@ -13,12 +13,79 @@
             </div>
             <div class="project_body">
                 <h3>Census Data and Real Estate Analysis</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-                officia deserunt mollit anim id est laborum.</p>
+
+                <h4>King County, WA Development Project</h4>
+
+                <img src="projects/real_estate_data_analysis/images/res_001.jpg">The King County Parcel Map</img>
+
+                <h4>Business Understanding</h4>
+
+                <p>The client is an NGO based in the Seattle area working in community outreach 
+                and development. They are interested in gaining deeper insight into the 
+                communities in and around King County with the hopes of better focusing investment 
+                for maximum impact.</p>
+
+                <p>The NGO board has identified Life Expectancy as a primary metric to locate and 
+                understands areas around the county that require investment. Further, they are 
+                interested in local property markets as an indicator of communities general 
+                economic health and as a indicator for the effect size they can expect their 
+                investments to have on those communities.</p>
+
+                <h4>The Data</h4>
+
+                <p>To investigate this topic I used a primary dataset collected by the King County 
+                Assessors office, and one secondary dataset compiled as part of the Land 
+                Conservation Intiative (LCI) opportunity are analysis.</p>
+
+                <p>The Kings County Property Sales data was collected from 2014 through 
+                2015.</p>
+
+                <p>The LCI dataset is a combination of several datasets from Public Health, the 
+                American Communities Survey, and localization data as part of King County's Open 
+                Data program. The date range on the data combined in this set are 2014 - 2019.</p>
+
+
+                <img src="projects/real_estate_data_analysis/images/res_002.png">King County Tree Cover Percentage</img>
+
+                <h4>Breaking Things Down</h4>
+
+                <p>The first thing I want to do is identify data types and start to parse out how 
+                things are related. in This section I will discuss the ways that I appraoched 
+                this. The parts that worked and the parts that didn't.</p>
+
+                <ol>
+                <li>I used pairplots and commonsense to identify possible colinearities between the data columns.</li>
+                <li>I wrote a series of functions that helped reorganize and rationalize the data more toward my use cases.</li>
+                    <ul>
+                    <li>i.e. I wrote a latitude and longitude binning function that let me merge the two data sets of of different sizes and types of data into a single dataframe.</li>
+                    <li>I wrote a function that cleaned and expanded my categorical data from the LCI set so that when it was grouped I was able to maintain the record of that data in a column that could then be expanded after the merge. Essentially, I think this may have been similar to a column expansion operation.</li>
+                    </ul>
+                <li>I wrote a lot of boiler plate code and am refactoring it into reusable blocks.</li>
+                    <ul>
+                    <li>I wrote a helper function for visualizing a large dataframe. It takes the dataframe as an argument and a list containing the column names of the columns you want to graph from it. Then it dynamically creates a 2-d array of axes objects automatically determining the best size grid to fit them.</li>
+                        <ul>
+                        <li>I want to expand this into a more general solution. One that can just be given any dataframe and determine based on the datatypes in each column the best way to return that column as a graph.</li>
+                        <li>It seems like it would be fun and useful to have a tool similar to pd.df.info() or describe() but for graphing.</li>
+                        </ul>
+                    </ul>
+                </ol>
+
+                <h4>Dealing with Outliers</h4>
+
+                <p>Below is a little bit of the process I used to take care of outliers. it 
+                resulted in a much more normal distribution for most of the numerical categories. 
+                I wasted most of today investigating the the sqft_lot and sqft_lot15 columns and 
+                why they are retaining so much skew after normalization.</p>
+
+                <p>I want to figure out how to take something like a derivative of the 
+                distribution to test how the features are actually structured. Made some progress 
+                toward that but it is now 2am.</p>
+
+                <img src="projects/real_estate_data_analysis/images/res_003.png"></img>
+
+                </br>
+                <h4>See more at my <a href="https://github.com/DrewAlderfer/census-and-real-estate-data">github repo!</a></h4>
+
             </div>
     </body>
 </html>

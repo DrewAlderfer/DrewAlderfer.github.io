@@ -10,6 +10,7 @@
 
 .info_links {
     display: flex;
+    align-items: baseline;
     gap: 1em;
 }
 

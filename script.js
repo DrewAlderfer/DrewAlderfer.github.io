@@ -10,7 +10,7 @@ let pOpen = false;
 // https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/
 //
 function titleCase(str) {
-  str = str.toLowerCase().split(' ');
+  str = str.replaceAll("_", " ").split(' ');
   for (var i = 0; i < str.length; i++) {
     str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
   }
@@ -23,8 +23,7 @@ projects.forEach (p_post => {
     // insert image
     p_post.firstElementChild.innerHTML = `<img src="projects/${name}/images/${name}.png"></img>`;
     // insert title
-    let title = name.replaceAll("_", " ");
-    p_post.getElementsByClassName("p-title").item(0).innerHTML = titleCase(title);
+    p_post.getElementsByClassName("p-title").item(0).innerHTML = titleCase(name);
     // insert tags
     fetch (`projects/${name}/tags.txt`)
         .then(x => x.text())
