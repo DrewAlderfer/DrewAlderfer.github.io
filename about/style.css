@@ -1,0 +1,19 @@
+.main {
+    width: 60vw;
+    padding: 2em;
+    justify-content: left;
+}
+
+#bio {
+    flex-flow: column nowrap;
+}
+
+.info_links {
+    display: flex;
+    gap: 1em;
+}
+
+.photo > img {
+    width: 20vw;
+    object-fit: cover;
+}

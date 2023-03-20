@@ -23,7 +23,7 @@ function sleep(ms) {
 }
 
 function open_panel(panel) {
-    return panel.style.width = "45vw";
+    return panel.style.width = "48vw";
 }
 
 function sidePanel() {
@@ -31,6 +31,7 @@ function sidePanel() {
     if (pOpen) {
         if (this.getAttribute("title") == cur_project) {
             //you probably want to reload different project hrefs 
+            panel.classList.remove("open")
             panel.style.width = 0;
             pOpen = false;
             panel.innerHTML = ""
@@ -46,6 +47,7 @@ function sidePanel() {
                 .then(x => x.text())
                 .then(y => panel.innerHTML = y);
             pOpen = true;
+            panel.classList.add("open")
         }
         content_fill();
 
