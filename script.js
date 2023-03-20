@@ -4,28 +4,60 @@
 let projects = document.querySelectorAll(".project");
 let panel = document.getElementById("p-expanded")
 let pOpen = false;
-let descriptions = document.querySelectorAll(".description")
 // console.log(panel)
 
-descriptions.forEach( desc => {
-    number = desc.id
-    if (number) {
-        fetch (`projects/${number}/desc.txt`).then(x => x.text()).then(y => desc.innerHTML = y)
-    }
-})
+// title case from:
+// https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/
+//
+function titleCase(str) {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+  }
+  return str.join(' ');
+}
 
+// Construct Projects
+projects.forEach (p_post => {
+    let name = p_post.getAttribute("title");
+    // insert image
+    p_post.firstElementChild.innerHTML = `<img src="projects/${name}/images/${name}.png"></img>`;
+    // insert title
+    let title = name.replaceAll("_", " ");
+    p_post.getElementsByClassName("p-title").item(0).innerHTML = titleCase(title);
+    // insert tags
+    fetch (`projects/${name}/tags.txt`)
+        .then(x => x.text())
+        .then(y => p_post.lastElementChild.getElementsByClassName("tag").item(0).innerHTML = y)
+    // insert description
+    fetch (`projects/${name}/desc.txt`)
+        .then(x => x.text())
+        .then(y => p_post.lastElementChild.lastElementChild.innerHTML = y)
+})
+// descriptions.forEach( desc => {
+//     name = desc.id
+//     if (name) {
+//         fetch (`projects/${name}/desc.txt`).then(x => x.text()).then(y => desc.innerHTML = y)
+//     }
+// })
+
+// Side Panel Operations
+// Event Listener
 projects.forEach(p => {
     p.addEventListener("click", sidePanel);
 })
 
+// Sleep Function
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Open Panel Functions
 function open_panel(panel) {
     return panel.style.width = "48vw";
 }
 
+// Eventlistener Callback
 function sidePanel() {
     project = this.getAttribute("title");
     if (pOpen) {
