@@ -48,13 +48,17 @@ a:hover {
 
 .project_body > p {
     text-indent: 1em;
-    line-height: 125%;
+    font-size: .9em;
+    /*line-height: 125%;*/
 }
 
 .project_body > img {
     display: flex;
+    font-size: .8em;
+    color: #888;
     align-content: center;
     justify-content: center;
+    padding: 8px;
     width: 100%; 
 }
 
