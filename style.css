@@ -20,20 +20,24 @@
     --small:    0.8em;
     --info:     1.25em;
 }
-
 body {
     display: flex;
-    height: 98vh;
+    height: 100vh;
+    box-sizing: content-box;
     padding: 5px;
     margin: 5px;
     background: #fff;
     font-family:"Roboto Flex", sans-serif;
-    padding: 20px;
     color: var(--black);
 	/* border: 2px solid black; */
 }
-
-
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+/*
+ *   -- Main Container --
+ */
 .container {
     display: flex;
     flex-grow: 1;
@@ -41,10 +45,13 @@ body {
     height: auto;
 	/* border: 1px dashed blue; */
 }
-
+/*
+*   -- Navigation Column --
+*/
 .side_bar {
     display: flex;
     flex-direction: row;
+    height: 90vh;
     gap: 5px;
     min-width: 30vw;
     padding: 10px;
@@ -58,15 +65,6 @@ body {
     width: 50%;
     /* border: 1px solid #748; */
 }
-
-a {
-    text-decoration: none;
-    color: var(--black);
-}
-a:hover {
-}
-
-
 .bar_header {
     display: flex;
     flex-direction: column;
@@ -74,7 +72,6 @@ a:hover {
     padding: 10px;
 	/* border: 1px solid green; */
 }
-
 .name {
     line-height: 1.1;
     margin-bottom: 20px;
@@ -95,10 +92,8 @@ a:hover {
     display: none;
     visibility: collapse;
 }
-
 .nav_button {
     padding: 10px;
-	/* border: 1px solid #444; */
     border-radius: 10px;
     transition: background .5s;
 	font-weight: var(--norm);
@@ -109,7 +104,9 @@ a:hover {
     background: #ECD;
     transition: background .3s;
 }
-
+/*                  */
+/* Jump_link Column */
+/*                  */
 .recent {
     display: flex;
     flex-direction: column;
@@ -127,13 +124,43 @@ a:hover {
 	font-weight: var(--norm);
     font-size: var(--navi);
 }
+.r_title {
+    display: flex;
+    line-height: 1;
+    justify-content: flex-end;
+    text-align: end;
+	font-weight: var(--thin);
+    font-size: var(--navi);
+}
 
+.r_date {
+    align-self: flex-end;
+    line-height: 1;
+	font-weight: var(--thic);
+    font-size: var(--small);
+    font-style: italic;
+    color: var(--pale);
+}
+.r_fill {
+    min-height: 30vh;
+}
 .jump_link {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    gap: 5px;
+    padding: 10px 0px;
+    border-radius: 10px;
+    transition: background .5s;
 }
-
+.jump_link:hover {
+    border-radius: 10px;
+    background: #DFDCEF;
+    transition: background .3s;
+}
+/*
+ *  -- Post Styling --
+ */
 .content {
     display: flex;
     flex-direction: row;
@@ -144,12 +171,26 @@ a:hover {
     overflow: visible; /* Clears the float */
 	/* border: 1px solid orange; */
 }
+.post {
+    display: flex;
+    flex-direction: column;
+}
 
-
+.post_body {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50vw;
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 50px;
+}
 .post_body p {
     text-indent: 2em;
     line-height: 1.75;
 	font-weight: var(--text);
+}
+.post_body img {
+    padding: 20px;
+    max-width: 100%;
 }
 
 .post_header {
@@ -172,40 +213,6 @@ a:hover {
     font-size: var(--info);
     color: var(--light);
 }
-
-
-.r_title {
-    display: flex;
-    line-height: 1;
-    justify-content: flex-end;
-    text-align: end;
-	font-weight: var(--thin);
-    font-size: var(--navi);
-}
-
-.r_date {
-    align-self: flex-end;
-    line-height: 1;
-	font-weight: var(--thic);
-    font-size: var(--small);
-    font-style: italic;
-    color: var(--pale);
-}
-
-.r_fill {
-    min-height: 30vh;
-}
-.jump_link {
-    padding: 10px 0px;
-    border-radius: 10px;
-    transition: background .5s;
-}
-.jump_link:hover {
-    border-radius: 10px;
-    background: #DFDCEF;
-    transition: background .3s;
-}
-
 .feed {
     flex-grow: 1;
     padding: 10px;
@@ -232,5 +239,8 @@ a:hover {
     }
     .content {
         overflow: visible;
+    }
+    .post_body {
+        max-width: 90vw;
     }
 }

@@ -1,0 +1,93 @@
+<div class="meta">
+    <ul>
+        <li>all</li>
+        <li>programming</li>
+        <li>machine learning</li>
+    </ul>
+</div>
+<div class="post">
+    <div class="post_header" id="post_number_three">
+        Anomaly Detection
+    </div>
+    <div class="post_subtitle">
+        Exploring Anomaly Detection with Autoencoders
+    </div>
+    <div class="post_info">
+        Posted on Nov. 20, 2022
+    </div>
+    <div class="post_body">
+        <img src="projects/anomaly_detection/images/ad_001.png"></img>
+
+        <h4>Introduction</h4>
+
+        <p>This is the github repo for my project on Anomaly Detection. I used a dataset 
+        of some ~500 images of screws to train a neural network and identify anomalous 
+        (damaged) screws in the test set.</p>
+
+        <h4>Business Understanding</h4>
+
+        <p>The purpose of this project is to look for ways to improve or automate quality 
+        control procedures in industrial manufacturing. The idea is to train a model to 
+        identify damaged or faulty products, in this case screws, and remove them from the 
+        production line.</p>
+
+        <h4>Data Understanding</h4>
+
+        <p>The dataset for this project was graciously provided by <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad">MVTec</a> as part of their 
+        Anomaly Detection image set.</p>
+
+        <h4>Data</h4>
+
+        <p>The data is split into a training and test set, and sub categories within the 
+        test set representing the anomalous category of the image. This made it fairly 
+        easy to load up the data into a notebook and get going with various autoencoding 
+        strategies.</p>
+
+        <h4>Modeling</h4>
+
+        <p>A visualization of the output from my first model is pictured below: 
+        </p>
+
+        <img src="projects/anomaly_detection/images/ad_002.png"></img>
+
+        <p>The first model was a simple autoencoder with a series of Dense layers that 
+        compressed the data from each image into a relatively tiny tensor and then 
+        attempted to reconstruct the original image from that compressed version. As you 
+        can see from the image above the model had difficulty abstracting the position of 
+        the screw in each image so the output images are blurry and distorted around the 
+        center point of the screws.</p>
+
+        <h4>Final Model</h4>
+
+        <p>The final model ended up being a multilayered convolutional network. The layers 
+        did a better job of abstracting the orientation of the screw and its structure in 
+        the image. </p>
+
+        <img src="projects/anomaly_detection/images/ad_003.png"></img>
+
+        <p>With this model I was able to achieve an average accuracy rating of 86% when it 
+        came to classifing anomalous screws. As you can see from the graph above once the 
+        model is trained I used the test set to measure the mean-square-error between the 
+        models inputs and outputs. This resulted in two loss distributions. A 
+        non-anomalous (normal) loss distribution and a loss distribution for anomalous 
+        input data.</p>
+
+        <p>Using these distributions I calculated a classificatoin threshold and then 
+        programmed a function to return the accuaracy rating of that threshold.</p>
+
+        <h4>Moving Forward</h4>
+
+        <p>I am continuing to investigate ways of improving this process's accuracy and 
+        consistency. I am going to try different loss functions and see if applying 
+        different preprocessing methods like sobel filtering or other simple convolutional 
+        functions could improve performance, and focus the model on specific features. </p>
+
+        <img src="projects/anomaly_detection/images/ad_004.png"></img>
+
+        <h4>Citations:</h4>
+
+        <p>Markus Ulrich, Patrick Follmann, Jan-Hendrik Neudeck: A comparison of 
+        shape-based matching with deep-learning-based object detection; in: Technisches 
+        Messen, 2019, DOI: 10.1515/teme-2019-0076.</p>
+    </div> 
+</div>
