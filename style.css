@@ -66,6 +66,7 @@ a {
 a:hover {
 }
 
+
 .bar_header {
     display: flex;
     flex-direction: column;
@@ -90,12 +91,23 @@ a:hover {
 	font-weight: var(--text);
     color: var(--hl);
 }
+.meta {
+    display: none;
+    visibility: collapse;
+}
 
 .nav_button {
     padding: 10px;
-	/* border: 2px solid yellow; */
+	/* border: 1px solid #444; */
+    border-radius: 10px;
+    transition: background .5s;
 	font-weight: var(--norm);
     font-size: var(--navi);
+}
+.nav_button:hover {
+    border-radius: 10px;
+    background: #ECD;
+    transition: background .3s;
 }
 
 .recent {
@@ -182,6 +194,16 @@ a:hover {
 
 .r_fill {
     min-height: 30vh;
+}
+.jump_link {
+    padding: 10px 0px;
+    border-radius: 10px;
+    transition: background .5s;
+}
+.jump_link:hover {
+    border-radius: 10px;
+    background: #DFDCEF;
+    transition: background .3s;
 }
 
 .feed {
