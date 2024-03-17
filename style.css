@@ -12,7 +12,7 @@
     --bold: 500;
     --thic: 700;
 
-    --title:    5em;
+    --title:    4.5em;
     --name:     4em;
     --sub_t:    1.5em;
     --navi:     1.5em;
@@ -53,11 +53,10 @@ a {
     flex-direction: row;
     height: 90vh;
     gap: 5px;
-    min-width: 30vw;
+    width: 30vw;
     padding: 10px;
 	/* border: 1px solid #448; */
 }
-
 .site_nav {
     display: flex;
     flex-direction: column;
@@ -110,39 +109,44 @@ a {
 .recent {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
     gap: 10px;
     justify-content: right;
     padding: 10px;
     width: 50%;
 	/* border: 1px solid purple; */
 }
-
-
+.r_fill {
+    display: none;
+    visibility: hidden;
+    min-height: 30vh;
+}
 .r_head {
+    /* display: none; */
+    /* visibility: hidden; */
     align-self: flex-end;
     margin: 5px;
-	font-weight: var(--norm);
+    border-bottom: 1px solid var(--pale);
+	font-weight: var(--thin);
     font-size: var(--navi);
+    color: var(--black);
 }
 .r_title {
     display: flex;
     line-height: 1;
     justify-content: flex-end;
     text-align: end;
-	font-weight: var(--thin);
+	font-weight: var(--norm);
     font-size: var(--navi);
 }
 
 .r_date {
     align-self: flex-end;
     line-height: 1;
-	font-weight: var(--thic);
+	font-weight: var(--norm);
     font-size: var(--small);
     font-style: italic;
     color: var(--pale);
-}
-.r_fill {
-    min-height: 30vh;
 }
 .jump_link {
     display: flex;
@@ -173,13 +177,15 @@ a {
 }
 .post {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    max-width: 50vw;
 }
 
 .post_body {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    max-width: 50vw;
     border-bottom: 1px solid var(--black);
     margin-bottom: 50px;
 }
@@ -192,7 +198,32 @@ a {
     padding: 20px;
     max-width: 100%;
 }
-
+.post_body .hidden {
+    display: none;
+    visibility: hidden;
+}
+.post_body .beginning {
+    align-self: center;
+}
+.post_body .show_more {
+    align-self: center;
+    margin-bottom: 20px;
+}
+.post_body .button {
+    background-color: var(--pale); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color .3s;
+}
+.post_body .button:hover {
+    background-color: var(--light);
+    transition: background-color .3s;
+}
 .post_header {
     margin-bottom: 20px;
 	font-weight: var(--thin);

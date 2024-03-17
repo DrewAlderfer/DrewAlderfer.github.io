@@ -16,72 +16,76 @@
         Posted on Sept. 20 2022
     </div>
     <div class="post_body">
-        <img src="projects/IMDB_analysis/images/IMDB_analysis.png"></img>
+        <div class="beginning">
+            <img src="projects/IMDB_analysis/images/IMDB_analysis.png"></img>
+        </div>
+        <div class="hidden">
+            <p>This project was a self directed EDA and data processing project using the 
+            Python Pandas library and a collection of datasets from IMDB (the Internet Movie 
+            Database) and a few other similar sources. The Intention of the project is to 
+            discover, analyze and use patterns and relationships found in the provided 
+            datasets to make business recommendations according to the following prompt.</p>
 
-        <p>This project was a self directed EDA and data processing project using the 
-        Python Pandas library and a collection of datasets from IMDB (the Internet Movie 
-        Database) and a few other similar sources. The Intention of the project is to 
-        discover, analyze and use patterns and relationships found in the provided 
-        datasets to make business recommendations according to the following prompt.</p>
+            <h4>Business Understanding</h4>
 
-        <h4>Business Understanding</h4>
+            <p>The client, Microsoft, has decided to explore getting involved in the 
+            entertainment industry. Specifically, they are interested in making movies. I have 
+            been task with examining the provided data and making three recommendations for 
+            how to successfully enter the entertainment industry as a large, established 
+            company currently operating in a different industry.</p>
 
-        <p>The client, Microsoft, has decided to explore getting involved in the 
-        entertainment industry. Specifically, they are interested in making movies. I have 
-        been task with examining the provided data and making three recommendations for 
-        how to successfully enter the entertainment industry as a large, established 
-        company currently operating in a different industry.</p>
+            <p>Some questions I attempted to answer with this dataset were: * What types of 
+            movies are succesful in today's market * What patterns and trends can be gleaned 
+            from the dataset * Given the observable business environment, what practical 
+            advice would I provide a client about entering the industry</p>
 
-        <p>Some questions I attempted to answer with this dataset were: * What types of 
-        movies are succesful in today's market * What patterns and trends can be gleaned 
-        from the dataset * Given the observable business environment, what practical 
-        advice would I provide a client about entering the industry</p>
+            <h4>Data Understanding</h4>
 
-        <h4>Data Understanding</h4>
+            <p>The source for the data used was a publicly licensed sql database provided by 
+            the website IMDB. The database contained 8 tables: table names</p>
 
-        <p>The source for the data used was a publicly licensed sql database provided by 
-        the website IMDB. The database contained 8 tables: table names</p>
+            <img src="projects/IMDB_analysis/images/imdb_001.png"></img>
 
-        <img src="projects/IMDB_analysis/images/imdb_001.png"></img>
+            <p>I started off the EDA process by pulling these table out of the sql database 
+            and storing them in Pandas DataFrame objects oragnized within a python dict 
+            object. I was then able to start observing the structure of and relationships 
+            between the tables and begin the process of analyzing there meaning.</p>
 
-        <p>I started off the EDA process by pulling these table out of the sql database 
-        and storing them in Pandas DataFrame objects oragnized within a python dict 
-        object. I was then able to start observing the structure of and relationships 
-        between the tables and begin the process of analyzing there meaning.</p>
+            <h4>Visualizations</h4>
 
-        <h4>Visualizations</h4>
+            <p>I started by visualizing the total box office grosses for each of the top 
+            genres.</p>
 
-        <p>I started by visualizing the total box office grosses for each of the top 
-        genres.</p>
+            <h4>Total Box Office by Genre</h4>
 
-        <h4>Total Box Office by Genre</h4>
+            <img src="projects/IMDB_analysis/images/imdb_002.png"></img>
 
-        <img src="projects/IMDB_analysis/images/imdb_002.png"></img>
+            <p>Then I decided to compare the median production budget by each of these 
+            genres.</p>
 
-        <p>Then I decided to compare the median production budget by each of these 
-        genres.</p>
+            <h4>Median Production Budgets</h4>
 
-        <h4>Median Production Budgets</h4>
+            <img src="projects/IMDB_analysis/images/imdb_003.png"></img>
 
-        <img src="projects/IMDB_analysis/images/imdb_003.png"></img>
+            <p>and the distribution within each genre of ratings vs 
+            budget:</p>
 
-        <p>and the distribution within each genre of ratings vs 
-        budget:</p>
+            <h4>Ratings per Million Spent</h4>
 
-        <h4>Ratings per Million Spent</h4>
+            <img src="projects/IMDB_analysis/images/imdb_004.png"></img>
 
-        <img src="projects/IMDB_analysis/images/imdb_004.png"></img>
+            <p>After identifying that Action and Drama commanded the largest market share 
+            among the various genres, I wanted to compare the distribution of the that market 
+            share within each repsectively.</p>
 
-        <p>After identifying that Action and Drama commanded the largest market share 
-        among the various genres, I wanted to compare the distribution of the that market 
-        share within each repsectively.</p>
+            <h4>Action Genre Market Distribution</h4>
 
-        <h4>Action Genre Market Distribution</h4>
+            <img src="projects/IMDB_analysis/images/imdb_005.png"></img>
 
-        <img src="projects/IMDB_analysis/images/imdb_005.png"></img>
+            <h4>Drama Genre Market Distribution</h4>
 
-        <h4>Drama Genre Market Distribution</h4>
-
-        <img src="projects/IMDB_analysis/images/imdb_006.png"></img>
+            <img src="projects/IMDB_analysis/images/imdb_006.png"></img>
+        </div>
+        <div class="show_more"><button class="button">Show More</button></div>
     </div> 
 </div>

@@ -1,0 +1,24 @@
+<div class="meta">
+    <ul>
+        <li>all</li>
+    </ul>
+</div>
+<div class="post">
+    <div class="post_header" id="post_number_two">
+        [TITLE]
+    </div>
+    <div class="post_subtitle">
+        [SUBTITLE]
+    </div>
+    <div class="post_info">
+        Posted on [DATE]
+    </div>
+    <div class="post_body">
+        <div class="beginning">
+        </div>
+        <div class="hidden">
+            [TEXT]
+        </div>
+        <div class="show_more"><button class="button">Show More</button></div>
+    </div> 
+</div>
