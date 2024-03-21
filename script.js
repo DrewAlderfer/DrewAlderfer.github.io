@@ -5,7 +5,15 @@ const parser = new DOMParser();
 const regex = new RegExp("[A-Za-z_0-9]*\.html", "g");
 const default_args = [["all"], true];
 var post;
-// add eventlistener
+
+const more_button = `<p>Show More</p>
+                    <svg class="arrow" width="100" height="30">
+                        <polygon points="5,5 50,25 100,5 50,25 5,5"/>
+                    </svg>`
+const less_button = `<svg class="arrow" width="100" height="30">
+                        <polygon points="5,25 50,5 100,25 50,5 5,25"/>
+                    </svg>
+                    <p>Show Less</p>`
 
 async function toggle_filter(item) {
     if (item.getAttribute("status") == "ON") {
@@ -115,15 +123,21 @@ async function fetchHTMLContent(args) {
         button.addEventListener("click", setTags);
     })
 
+    await buttons.forEach((element) => {
+        element.innerHTML = "";
+        element.insertAdjacentHTML("afterbegin", more_button);
+    });
+
     await buttons.forEach((button) => button.addEventListener("click", (event) => {
+        event.target.replaceChildren();
         if (event.target.getAttribute("status") == "ON") {
             event.target.setAttribute("status", "OFF");
             event.target.parentElement.parentElement.querySelector(".hidden").setAttribute("style", "display: none; visibility: hidden");
-            event.target.innerText = "Show More";
+            event.target.insertAdjacentHTML("afterbegin", more_button);
         } else {
             event.target.setAttribute("status", "ON");
             event.target.parentElement.parentElement.querySelector(".hidden").setAttribute("style", "display: block; visibility: visible");
-            event.target.innerText = "Show Less";
+            event.target.insertAdjacentHTML("afterbegin", less_button);
         }
     }));
 }

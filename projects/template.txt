@@ -2,9 +2,9 @@
     <ul>
         <li>all</li>
     </ul>
-</div>
+<</div>
 <div class="post">
-    <div class="post_header" id="post_number_two">
+    <div class="post_header">
         [TITLE]
     </div>
     <div class="post_subtitle">
@@ -21,4 +21,4 @@
         </div>
         <div class="show_more"><button class="button">Show More</button></div>
     </div> 
-</div>
+<</div>
