@@ -99,10 +99,9 @@ img {
     gap: 10px;
     margin-top: 20px;
 }
-.social {
-    height: 32px;
-    width: 32px;
-    background: var(--light);
+.social img {
+    max-height: 32px;
+    max-width: 32px;
 }
 .meta {
     display: none;
